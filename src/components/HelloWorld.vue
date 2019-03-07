@@ -2,6 +2,7 @@
   <div class="hello">
     <p>字体图标</p>
     <icon name="home" class="icon-font"></icon>
+    <!-- 字体图标使用文档https://github.com/Justineo/vue-awesome/blob/master/README.zh_CN.md -->
   </div>
 </template>
 
