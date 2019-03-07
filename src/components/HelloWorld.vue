@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <p>字体图标</p>
-    <icon name="home"></icon>
+    <icon name="home" class="icon-font"></icon>
   </div>
 </template>
 
@@ -31,5 +31,12 @@ li {
 }
 a {
   color: #42b983;
+}
+.icon-font {
+  width: 100px;
+  height: 100px;
+  color: red;
+  transform: scale3d(2,2,2);
+  transform: rotate(45deg);
 }
 </style>
