@@ -3,12 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import iView from 'iview'
+import 'iview/dist/styles/iview.css'
 // 引入vue-awesome
 import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons/index.js'
 
-// 全局注册
+// 全局注册icon组件
 Vue.component('icon', Icon)
+
+Vue.use(iView)
 
 Vue.config.productionTip = false
 
