@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "iview": "^3.3.0",
+    "js-md5": "^0.7.3",
     "normalize": "^0.3.1",
     "vue": "^2.5.2",
     "vue-awesome": "^3.4.0",
