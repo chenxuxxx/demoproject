@@ -7,6 +7,8 @@
            :data="data1"></Table>
     <Button @click="handleSelectAll(true)">全选</Button>
     <Button @click="handleSelectAll(false)">取消全选</Button>
+    <!-- 点击调整 -->
+    <button @click="handler">点我跳转到静态文件</button>
   </div>
 </template>
 <script>
@@ -67,6 +69,11 @@ export default {
   methods: {
     handleSelectAll (status) {
       this.$refs.selection.selectAll(status)
+    },
+    handler () {
+      // window.open('static/魏夕亚.docx')
+      // window.open('static/logo.png')
+      window.open('static/IMG_20180602_180757.jpg')
     }
   }
 }
