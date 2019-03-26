@@ -5,6 +5,7 @@ import table from '@/views/iview-ui/table'
 import md5passWord from '@/views/other/md5-passWord'
 import camera from '@/views/other/camera'
 import testApi from '@/views/other/testApi'
+import scrollDemo from '@/views/other/scrollDemo'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/testApi',
       name: 'testApi',
       component: testApi
+    },
+    {
+      path: '/scrollDemo',
+      name: 'scrollDemo',
+      component: scrollDemo
     }
   ]
 })
