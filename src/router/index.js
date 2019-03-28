@@ -6,6 +6,7 @@ import md5passWord from '@/views/other/md5-passWord'
 import camera from '@/views/other/camera'
 import testApi from '@/views/other/testApi'
 import scrollDemo from '@/views/other/scrollDemo'
+import iframe from '@/views/other/iframe'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/scrollDemo',
       name: 'scrollDemo',
       component: scrollDemo
+    },
+    {
+      path: '/iframe',
+      name: 'iframe',
+      component: iframe
     }
   ]
 })
