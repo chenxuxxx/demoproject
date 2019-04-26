@@ -1,18 +1,37 @@
 <template>
   <div class="hello">
     <p>字体图标</p>
-    <icon name="home" class="icon-font"></icon>
+    <icon name="home"
+          class="icon-font"></icon>
     <!-- 字体图标使用文档https://github.com/Justineo/vue-awesome/blob/master/README.zh_CN.md -->
+    <div>{{$store.state.count}}</div>
+    <div @click="increment('aa')">点击改变vuex 中的值</div>
+    <div @click="handler">点击改变辅助函数testModule中的值</div>
+    <input type="text" v-model="count">
   </div>
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      aa: 2
     }
+  },
+  methods: {
+    ...mapMutations(['increment']),
+    ...mapMutations('testModules', ['demo']),
+    handler () {
+      // console.dir(this.demo)
+      this.demo(this.aa)
+      // this.aa = this.count
+    }
+  },
+  computed: {
+    ...mapState('testModules', ['count'])
   }
 }
 </script>
@@ -23,7 +42,7 @@ export default {
   width: 100px;
   height: 100px;
   color: red;
-  transform: scale3d(2,2,2);
+  transform: scale3d(2, 2, 2);
   transform: rotate(45deg);
 }
 </style>

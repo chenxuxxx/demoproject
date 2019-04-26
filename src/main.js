@@ -8,6 +8,7 @@ import 'iview/dist/styles/iview.css'
 // 引入vue-awesome
 import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons/index.js'
+import store from './store/index'
 
 // 全局注册icon组件
 Vue.component('icon', Icon)
@@ -21,5 +22,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store
 })
