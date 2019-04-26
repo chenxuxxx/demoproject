@@ -8,7 +8,7 @@
 /** 引入上传工具类
  *http://fex.baidu.com/webuploader/
 */
-// import WebUploader from '@/components/fileUpload/webuploader.js'
+// import WebUploader from '@/utils/webuploader.js'
 /**
  * 上传工具类
  *  fileUploadParams对象
@@ -35,7 +35,7 @@
 //     swf: '@/components/fileUpload/Uploader.swf',
 //     // 文件接收服务端
 //     server: '',
-//     pick: '#picker',
+//     pick: '#picker', // dom结构
 //     // 是否可以重复上传
 //     duplicate: true,
 //     // 允许选择文件格式
@@ -172,41 +172,6 @@ export const isSupportFlash = (flashTip) => {
   }
 }
 
-/**
- * 权限菜单过滤器（arrList:传入的过滤目标数组，arr:需要过滤的数组）
- */
-export const objectLocation = (arrList, arr) => {
-  let location = []
-  let indexList = []
-  let menuList = []
-  if (arrList) {
-    arrList.map(function (item, index) {
-      if (item.childResourceList && item.childResourceList.length) {
-        item.childResourceList.map(function (child, num) {
-          indexList.push(child.resourceCode)
-          menuList.push(child.isShow)
-        })
-      } else {
-        indexList.push(item.resourceCode)
-        menuList.push(item.isShow)
-      }
-    })
-    // 取出对应的值，没有的存0
-    arr.map(function (item, index) {
-      if (indexList.indexOf(item) !== -1) {
-        location.push(menuList[indexList.indexOf(item)])
-      } else {
-        // 当前resourceCode的值没有返
-        location.push(0)
-      }
-    })
-  } else {
-    arr.map(function (item, index) {
-      location.push(0)
-    })
-  }
-  return location
-}
 // 判断当前是否为ie9
 export const IEVersion = () => {
   var userAgent = navigator.userAgent // 取得浏览器的userAgent字符串
@@ -247,4 +212,12 @@ export const ajax = (obj) => {
     }
   }
   xhr.send(obj.data)
+}
+// 封装深拷贝方法
+export var deepCopy = function (source) {
+  var sourceCopy = source instanceof Array ? [] : {}
+  for (var item in source) {
+    sourceCopy[item] = typeof source[item] === 'object' ? deepCopy(source[item]) : source[item]
+  }
+  return sourceCopy
 }
