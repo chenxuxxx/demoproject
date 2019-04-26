@@ -11,9 +11,12 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
+      '/evidence': {
         // target: 'http://www.baidu.com',  //目标接口域名
-        target: ' http://192.168.84.171:8040',
+        target: ' http://192.168.78.66:9088',
+        pathRewrite:{
+          '^/evidence':''
+        }
       }
       // cssSourceMap: false
     },
