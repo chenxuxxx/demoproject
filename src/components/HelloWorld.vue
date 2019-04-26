@@ -8,6 +8,39 @@
     <div @click="increment('aa')">点击改变vuex 中的值</div>
     <div @click="handler">点击改变辅助函数testModule中的值</div>
     <input type="text" v-model="count">
+  <h1>测试滚动条</h1>
+  <ul class="father-box">
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    <li style='height:30px; margin-top:2px; background-color:green;'></li>
+  </ul>
   </div>
 </template>
 
@@ -44,5 +77,11 @@ export default {
   color: red;
   transform: scale3d(2, 2, 2);
   transform: rotate(45deg);
+}
+.father-box {
+  height: 300px;
+  background-color: skyblue;
+  overflow-x: scroll;
+  width: 300px;
 }
 </style>

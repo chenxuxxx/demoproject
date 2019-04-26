@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
+import './style/index.css'
 // 引入vue-awesome
 import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons/index.js'
+import 'es6-promise/auto'
 import store from './store/index'
 
 // 全局注册icon组件
