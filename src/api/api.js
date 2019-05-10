@@ -8,3 +8,10 @@ export function testApi (params) {
     // responseType: 'blob' // 如果是文件流的格式 设置返回格式
   })
 }
+export function testMock (params) {
+  return $axios({
+    url: '/user',
+    method: 'POST',
+    data: params
+  })
+}

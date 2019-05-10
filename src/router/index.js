@@ -7,6 +7,7 @@ import camera from '@/views/other/camera'
 import testApi from '@/views/other/testApi'
 import scrollDemo from '@/views/other/scrollDemo'
 import iframe from '@/views/other/iframe'
+import testMock from '@/views/other/testMock'
 
 Vue.use(Router)
 
@@ -46,6 +47,12 @@ export default new Router({
       path: '/iframe',
       name: 'iframe',
       component: iframe
+    },
+    {
+      path: '/testMock',
+      name: 'testMock',
+      component: testMock
     }
+
   ]
 })

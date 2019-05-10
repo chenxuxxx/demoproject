@@ -11,6 +11,7 @@ import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons/index.js'
 import 'es6-promise/auto'
 import store from './store/index'
+import '@/mock/index'
 
 // 全局注册icon组件
 Vue.component('icon', Icon)
