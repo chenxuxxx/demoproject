@@ -15,3 +15,10 @@ export function testMock (params) {
     data: params
   })
 }
+export function getTableDataApi (params) {
+  return $axios({
+    url: '/tableData',
+    method: 'POST',
+    data: params
+  })
+}
