@@ -8,6 +8,7 @@ import testApi from '@/views/other/testApi'
 import scrollDemo from '@/views/other/scrollDemo'
 import iframe from '@/views/other/iframe'
 import testMock from '@/views/other/testMock'
+import biaozhu from '@/views/other/biaozhu'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/testMock',
       name: 'testMock',
       component: testMock
+    },
+    {
+      path: '/biaozhu',
+      name: 'biaozhu',
+      component: biaozhu
     }
 
   ]
