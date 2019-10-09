@@ -20,6 +20,10 @@ module.exports = {
       }
       // cssSourceMap: false
     },
+    // vue-devtools 里用 Open in editor，打开.vue文件
+    before (app) {
+      app.use('/__open-in-editor', openInEditor())
+    },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 15647, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined

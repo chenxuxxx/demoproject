@@ -1,0 +1,12 @@
+{
+  "znbmUrl": "http://10.101.7.46:18026/znbm",
+  "imgServer": "http://10.101.7.28:88",
+  "loginAutority": false,
+  "fileDownload": "http://10.101.7.45:84/staticDownload/",
+  "operatingManual": "operatingManual.zip",
+  "videoCourse": "videoCourse.zip",
+  "scanningPlug": "scanningPlug.zip",
+  "chunkSize": 0.7,
+  "flow-explain": "1正常流程,0跳过分卷",
+  "flow": 1
+}

@@ -221,3 +221,27 @@ export var deepCopy = function (source) {
   }
   return sourceCopy
 }
+// 用于判断是开发环境还是生产环境
+// const prod = process.env.NODE_ENV === 'production'
+// 读取配置文件
+export const readFiles = function () {
+  let xhr = null
+  // code for IE7+, Firefox, Chrome, Opera, Safari
+  if (window.XMLHttpRequest) {
+    xhr = new XMLHttpRequest()
+  } else { // code for IE6, IE5
+    // eslint-disable-next-line no-undef
+    xhr = new ActiveXObject('Microsoft.XMLHTTP')
+  }
+  if (xhr != null) {
+    let urlStr = '../../configData/configData.json'
+    xhr.open('GET', urlStr, false)
+    xhr.send(null)
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // return JSON.parse(xhr.responseText)
+      }
+    }
+    return JSON.parse(xhr.responseText)
+  }
+}

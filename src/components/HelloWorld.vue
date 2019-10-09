@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <button @click="readFileData">点我读取配置文件</button>
     <p>字体图标</p>
     <icon name="home"
           class="icon-font"></icon>
@@ -8,50 +9,52 @@
     <div @click="increment('aa')">点击改变vuex 中的值</div>
     <div @click="handler">点击改变辅助函数testModule中的值</div>
     <input type="text" v-model="count">
-  <h1>测试滚动条</h1>
-  <ul class="father-box">
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-    <li style='height:30px; margin-top:2px; background-color:green;'></li>
-  </ul>
+    <h1>测试滚动条</h1>
+    <ul class="father-box">
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+      <li style='height:30px; margin-top:2px; background-color:green;'></li>
+    </ul>
   </div>
 </template>
 
 <script>
 import { mapMutations, mapState } from 'vuex'
+import { readFiles } from '@/utils/utils'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      aa: 2
+      aa: 2,
+      configData: {} // 配置文件
     }
   },
   methods: {
@@ -61,6 +64,10 @@ export default {
       // console.dir(this.demo)
       this.demo(this.aa)
       // this.aa = this.count
+    },
+    readFileData () {
+      // readFiles()
+      alert(readFiles())
     }
   },
   computed: {
