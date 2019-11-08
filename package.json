@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "echarts": "^4.4.0",
     "es6-promise": "^4.2.6",
     "iview": "^3.3.0",
     "js-md5": "^0.7.3",

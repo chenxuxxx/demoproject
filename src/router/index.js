@@ -10,6 +10,7 @@ import iframe from '@/views/other/iframe'
 import testMock from '@/views/other/testMock'
 import biaozhu from '@/views/other/biaozhu'
 import referh from '@/views/other/referh'
+import echart from '@/views/other/echart'
 
 Vue.use(Router)
 
@@ -64,6 +65,11 @@ export default new Router({
       path: '/referh',
       name: '上拉刷新',
       component: referh
+    },
+    {
+      path: '/echart',
+      name: 'echart',
+      component: echart
     }
   ]
 })
