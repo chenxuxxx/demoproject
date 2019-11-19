@@ -43,19 +43,11 @@ instance.interceptors.response.use(function (response) {
     if (!sessionStorageGet('localUserId') && response.headers.userid) {
       sessionStorageSet('localUserId', response.headers.userid)
     }
-    // 登录成功后的接口请求时,本地存储被清除
-    // if (response.headers.userid && response.request.responseURL.split('/').indexOf('login') < 0 && !sessionStorageGet('loginData')) {
-    //   sessionStorageClear()
-    //   router.replace({
-    //     name: 'login'
-    //   })
     Message.destroy()
     Message.warning({
       content: '登录已过期，请重新登录',
       duration: 2
     })
-    //   return
-    // }
     if ((sessionStorageGet('localUserId') && response.headers.userid && sessionStorageGet('localUserId') !== response.headers.userid) || (response.headers.sessionstatus && response.headers.sessionstatus === 'invalid')) {
       if (!/登录成功/.test(response.data.message)) {
         sessionStorageClear()
@@ -73,6 +65,16 @@ instance.interceptors.response.use(function (response) {
       }
     }
   }
+  //  如果系统被别的系统用iframe嵌入可用parent !== window来进行判断
+  // if (response.data.ret && response.data.ret === 302) {
+  //   // 判断是否有iframe嵌套
+  //   if (parent !== window) {
+  //     parent.location.href = response.data.redirectUrl
+  //   } else {
+  //     window.location.href = response.data.redirectUrl
+  //   }
+  //   return Promise.reject(response)
+  // }
   return response
 }, function (error) {
   return Promise.reject(error)
