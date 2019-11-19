@@ -78,7 +78,7 @@ export default {
       myTreeRadial.setOption(option)
       myTreeRadial.on('mouseover', (params) => {
         console.log(params)
-        let isSelectedDot = params.event.target.__dimIdx;
+        let isSelectedDot = params.event.target.__dimIdx
         // console.log(isSelectedDot)
         if (isSelectedDot === undefined) {
           this.dataIndex = 10000
