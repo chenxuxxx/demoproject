@@ -11,6 +11,7 @@ import testMock from '@/views/other/testMock'
 import biaozhu from '@/views/other/biaozhu'
 import referh from '@/views/other/referh'
 import echart from '@/views/other/echart'
+import photo from '@/views/other/photo'
 
 Vue.use(Router)
 
@@ -70,6 +71,11 @@ export default new Router({
       path: '/echart',
       name: 'echart',
       component: echart
+    },
+    {
+      path: '/photo',
+      name: 'photo',
+      component: photo
     }
   ]
 })
