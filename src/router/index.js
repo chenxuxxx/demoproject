@@ -12,6 +12,7 @@ import biaozhu from '@/views/other/biaozhu'
 import referh from '@/views/other/referh'
 import echart from '@/views/other/echart'
 import photo from '@/views/other/photo'
+import audio from '@/views/other/audio'
 
 Vue.use(Router)
 
@@ -76,6 +77,11 @@ export default new Router({
       path: '/photo',
       name: 'photo',
       component: photo
+    },
+    {
+      path: '/audio',
+      name: 'audio',
+      component: audio
     }
   ]
 })
