@@ -83,5 +83,10 @@ export default new Router({
       name: 'audio',
       component: audio
     }
+    // {
+    //   path: '/audio',
+    //   name: 'audio',
+    //   component: audio
+    // }
   ]
 })
